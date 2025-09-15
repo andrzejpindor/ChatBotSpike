@@ -1,0 +1,15 @@
+<mat-form-field class="input-field" appearance="outline">
+      <textarea matInput
+                placeholder="Type a message..."
+                [(ngModel)]="userInput"
+                (keypress)="onKeyDown($event)"
+                rows="2"></textarea>
+</mat-form-field>
+@if (sendEnabled()) {
+  <button mat-raised-button color="primary" (click)="send()">
+    SEND
+  </button>
+}
+@if (stopEnabled()) {
+  <button mat-raised-button color="primary" (click)="stop.emit()">STOP</button>
+}

@@ -1,0 +1,19 @@
+<div class="container mat-typography">
+  <h1>Chat history</h1>
+
+  <mat-card>
+    @let chatList = (chatList$ | async);
+    @if (chatList?.length) {
+      <mat-list>
+        @for (chat of chatList; track chat.id) {
+          <mat-list-item [routerLink]="['/chat', chat.id]">
+            <h3>Chat {{ chat.id }}</h3>
+            <p>{{ chat.title }}</p>
+          </mat-list-item>
+        }
+      </mat-list>
+    } @else {
+      <p class="empty-state">There are no chats yet</p>
+    }
+  </mat-card>
+</div>

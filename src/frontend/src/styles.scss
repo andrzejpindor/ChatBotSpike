@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material/prebuilt-themes/azure-blue.css";
+
+html, body { height: 100%;  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* { box-sizing: border-box; }
+
+.message {
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 90%;
+  word-wrap: break-word;
+  display: inline-block;
+  white-space: pre-wrap;
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  &--user {
+    background-color: #e0f7fa;
+    align-self: flex-start;
+    color: #006064;
+  }
+
+  &--system {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    color: #333;
+    line-height: 1.2rem;
+  }
+
+  &--streaming {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    color: #333;
+    line-height: 1.2rem;
+    margin-bottom: 120px;
+  }
+}

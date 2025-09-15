@@ -1,0 +1,21 @@
+@ChatBotApi_HostAddress = http://localhost:5130
+
+GET {{ChatBotApi_HostAddress}}/chats
+Accept: application/json
+
+###
+
+GET {{ChatBotApi_HostAddress}}/chats/{{chatId}}
+Accept: application/json
+
+###
+
+POST {{ChatBotApi_HostAddress}}/messages/{{messageId}}/reaction
+Content-Type: application/json
+Accept: application/json
+
+{
+  "reactionType": "like"
+}
+
+###

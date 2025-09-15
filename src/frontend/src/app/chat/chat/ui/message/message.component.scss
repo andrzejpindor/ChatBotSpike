@@ -1,0 +1,8 @@
+.reaction-buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  button.selected {
+    background-color: #d1c4e9;
+  }
+}

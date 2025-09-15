@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  padding: 20px;
+}
+
+mat-list-item {
+  cursor: pointer !important;
+  &:hover {
+    background-color: #7e7878;
+  }
+}
+
+p.empty-state {
+  padding: 20px;
+}

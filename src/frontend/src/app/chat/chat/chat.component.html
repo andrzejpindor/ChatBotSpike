@@ -1,0 +1,33 @@
+<div class="chat-box">
+  @if (isLoading()) {
+    <div class="loading-overlay">
+      <mat-spinner />
+      Just a moment...
+    </div>
+  } @else {
+    <div class="chat-box__messages" #messagesBox>
+      @if(showIntent()){
+        <div class="intent-banner">
+          How can I help you today?
+        </div>
+      }
+      @for (msg of messages(); track msg.id) {
+        <app-message [message]="msg"
+                     (reaction)="onReactionSet($event, msg)"
+        />
+      }
+      @if (streamingContent()) {
+        <app-streaming-message [streamingContent]="streamingContent()"/>
+      }
+    </div>
+
+    <div class="chat-box__footer">
+      <app-chat-controls [sendEnabled]="sendEnabled()"
+                         [stopEnabled]="stopEnabled()"
+                         (sendMessage)="onSend($event)"
+                         (stop)="onStop()"
+                         #controls
+      />
+    </div>
+  }
+</div>
